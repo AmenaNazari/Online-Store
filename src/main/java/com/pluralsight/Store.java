@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileWriter;
+
+
 
 
 public class store {
@@ -93,7 +97,7 @@ public class store {
                     System.out.println("Product not found.");
                 }
 
-            }
+
 
         // This method should display a list of products from the inventory,
         // and prompt the user to add items to their cart. The method should
@@ -102,7 +106,23 @@ public class store {
         // add the selected product to the cart ArrayList.
 
 
-    public static void displayCart(ArrayList<Product> cart, Scanner scanner, double totalAmount) {
+    public static void displayCart(ArrayList<Product> cart, Scanner scanner, double totalAmount){
+                    if (cart.isEmpty()) {
+                        System.out.println("\nCart is empty.");
+                        return 0.0;
+                    }
+
+                    System.out.println("\nYour Cart:");
+                    double total = 0.0;
+                    for (Product moon : cart) {
+                        System.out.println(moon);git 
+                        total += moon.getPrice();
+                    }
+                    System.out.printf("Total: $%.2f\n", total);
+
+                    return total;
+                }
+        }
 
         // This method should display the items in the cart ArrayList, along
         // with the total cost of all items in the cart. The method should
