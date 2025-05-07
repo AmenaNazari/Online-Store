@@ -1,9 +1,12 @@
 package com.pluralsight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Store {
+
+public class store {
 
     public static void main(String[] args) {
         // Initialize variables
@@ -47,6 +50,21 @@ public class Store {
     }
 
     public static void loadInventory(String fileName, ArrayList<Product> inventory) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split("\\|");
+                if (parts.length == 3) {
+                    String id = parts[0];
+                    String name = parts[1];
+                    double price = Double.parseDouble(parts[2]);
+                    inventory.add(new Product(id, name, price));
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading inventory file: " + e.getMessage());
+        }
+    }
         // This method should read a CSV file with product information and
         // populate the inventory ArrayList with com.pluralsight.Product objects. Each line
         // of the CSV file contains product information in the following format:
@@ -55,17 +73,37 @@ public class Store {
         //
         // where id is a unique string identifier, name is the product name,
         // price is a double value representing the price of the product
-    }
+
 
     public static void displayProducts(ArrayList<Product> inventory, ArrayList<Product> cart, Scanner scanner) {
+            System.out.println("\nAvailable Products:");
+            for (Product p : inventory) {
+                System.out.println(p);
+            }
+
+            System.out.print("Enter Product ID to add to cart (or 'x' to cancel): ");
+            String input = scanner.nextLine();
+
+            if (!input.equalsIgnoreCase("x")) {
+                Product selected = findProductById(input, inventory);
+                if (selected != null) {
+                    cart.add(selected);
+                    System.out.println("Added to cart: " + selected.getName());
+                } else {
+                    System.out.println("Product not found.");
+                }
+
+            }
+
         // This method should display a list of products from the inventory,
         // and prompt the user to add items to their cart. The method should
         // prompt the user to enter the ID of the product they want to add to
         // their cart. The method should
         // add the selected product to the cart ArrayList.
-    }
+
 
     public static void displayCart(ArrayList<Product> cart, Scanner scanner, double totalAmount) {
+
         // This method should display the items in the cart ArrayList, along
         // with the total cost of all items in the cart. The method should
         // prompt the user to remove items from their cart by entering the ID
@@ -74,6 +112,7 @@ public class Store {
     }
 
     public static void checkOut(ArrayList<Product> cart, double totalAmount) {
+
         // This method should calculate the total cost of all items in the cart,
         // and display a summary of the purchase to the user. The method should
         // prompt the user to confirm the purchase, and calculate change and clear the cart
@@ -81,10 +120,11 @@ public class Store {
     }
 
     public static Product findProductById(String id, ArrayList<Product> inventory) {
+
         // This method should search the inventory ArrayList for a product with
         // the specified ID, and return the corresponding com.pluralsight.Product object. If
         // no product with the specified ID is found, the method should return
         // null.
     }
-}
- 
+
+
