@@ -1,71 +1,101 @@
-# Project Title
+Online Store
 
 ## Description of the Project
+This Java console application simulates a simple online store.
+Users can view products, add items to a shopping cart, remove them, and perform checkout with simulated payment.
+The app reads product inventory from a products.csv file, allowing dynamic updates without code changes.
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
-![Class Diagram](path/to/your/class_diagram.png)
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
+A🔹 1. Load Inventory
+As a user, I want to see products from a file, so I can choose from a real list without the developer hardcoding it.
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+🔹 2. Show Products
+As a user, I want to view a list of available products, so I know what’s in stock.
 
+🔹 3. Add to Cart
+As a user, I want to add a product to my cart by entering its ID, so I can build my order.
+
+🔹 4. View Cart
+As a user, I want to see what’s currently in my cart, so I can review my selections.
+
+🔹 5. Remove from Cart
+As a user, I want to remove items from the cart by ID, so I can fix mistakes.
+
+🔹 6. Checkout
+As a user, I want to see a total cost and make a payment, so I can complete my purchase.
+
+🔹 7. Handle Payment
+As a user, I want the system to calculate change if I overpay, or alert me if I underpay.
+
+🔹 8. Exit Program
+As a user, I want to exit the application cleanly when I’m done.ng session.
 ## Setup
-
-Instructions on how to set up and run the project using IntelliJ IDEA.
 
 ### Prerequisites
 
-- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
-- Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
+IntelliJ IDEA (recommended): Download IntelliJ
 
+Java SDK (Java 17 or later recommended): Make sure it's installed and configured in IntelliJ.
 ### Running the Application in IntelliJ
 
 Follow these steps to get your application running within IntelliJ IDEA:
 
 1. Open IntelliJ IDEA.
-2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
-3. After the project opens, wait for IntelliJ to index the files and set up the project.
-4. Find the main class with the `public static void main(String[] args)` method.
-5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
+
+Click File > Open, and select the folder where your project is located.
+
+Wait for IntelliJ to finish indexing the project files.
+
+Navigate to Store.java (your main class).
+
+Right-click on the file → Run 'Store.main()'.
+
+
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+Java SE 17+
+
+File I/O: BufferedReader and Scanner
+
+Collections: ArrayList
+
+Console UI: System.in/System.out interaction
+
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+ [Giphy Capture](https://giphy.com/apps/giphycapture) 
 
 ![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
+Add product quantity and stock control
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+Save cart and purchase history using BufferedWriter
+
+Implement login/user accounts
+
+Add product categories and search functionality
 
 ## Resources
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- [Java ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+- [google](google.com)
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+Amena Nazari – Developer,
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to Maroun, Raymond for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
  
