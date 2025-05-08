@@ -23,6 +23,7 @@ public class Store {
 
         // Display menu and get user choice until they choose to exit
         while (choice != 3) {
+
             System.out.println("Welcome to the Online Store!");
             System.out.println("1. Show Products");
             System.out.println("2. Show Cart");

@@ -67,9 +67,9 @@ Console UI: System.in/System.out interaction
 
 ## Demo
 
- [Giphy Capture](https://giphy.com/apps/giphycapture) 
+ ![img.png](img.png)
 
-![Application Screenshot](path/to/your/screenshot.png)
+![img_1.png](img_1.png)
 
 ## Future Work
 
